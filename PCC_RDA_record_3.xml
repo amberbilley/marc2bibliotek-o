@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<marc:collection xmlns:marc="http://www.loc.gov/MARC21/slim"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+    <marc:record>
+        <marc:leader>02472cam a2200505 i 4500</marc:leader>     
+        <marc:controlfield tag="001">ocn694080267</marc:controlfield>  
+        <marc:controlfield tag="003">OCoLC</marc:controlfield>
+        <marc:controlfield tag="005">20170718022633.0</marc:controlfield>
+        <marc:controlfield tag="008">101222t20102010wyua     b    001 0 eng d</marc:controlfield>
+        <marc:datafield tag="040" ind1=" " ind2=" ">
+            <marc:subfield code="a">NRC</marc:subfield>
+            <marc:subfield code="b">eng</marc:subfield>
+            <marc:subfield code="e">rda</marc:subfield>
+            <marc:subfield code="c">NLM</marc:subfield>
+            <marc:subfield code="d">NRC</marc:subfield>
+            <marc:subfield code="d">YDXCP</marc:subfield>
+            <marc:subfield code="d">UIU</marc:subfield>
+            <marc:subfield code="d">UKMGB</marc:subfield>
+            <marc:subfield code="d">YLS</marc:subfield>
+            <marc:subfield code="d">OCLCF</marc:subfield>
+            <marc:subfield code="d">OCLCQ</marc:subfield>
+            <marc:subfield code="d">OCLCO</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="016" ind1="7" ind2=" ">
+            <marc:subfield code="a">101566522</marc:subfield>
+            <marc:subfield code="2">DNLM</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="016" ind1="7" ind2=" ">
+            <marc:subfield code="a">015953685</marc:subfield>
+            <marc:subfield code="2">Uk</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="019" ind1=" " ind2=" ">
+            <marc:subfield code="a">707937328</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="020" ind1=" " ind2=" ">
+            <marc:subfield code="a">9781591610441</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="020" ind1=" " ind2=" ">
+            <marc:subfield code="a">1591610443</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="029" ind1="0" ind2=" ">
+            <marc:subfield code="a">NLM</marc:subfield>
+            <marc:subfield code="b">101566522</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="029" ind1="1" ind2=" ">
+            <marc:subfield code="a">AU@</marc:subfield>
+            <marc:subfield code="b">000047495074</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="029" ind1="1" ind2=" ">
+            <marc:subfield code="a">CHBIS</marc:subfield>
+            <marc:subfield code="b">009644411</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="029" ind1="1" ind2=" ">
+            <marc:subfield code="a">CHVBK</marc:subfield>
+            <marc:subfield code="b">197165397</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="035" ind1=" " ind2=" ">
+            <marc:subfield code="a">(OCoLC)694080267</marc:subfield>
+            <marc:subfield code="z">(OCoLC)707937328</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="042" ind1=" " ind2=" ">
+            <marc:subfield code="a">nlmcopyc</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="050" ind1=" " ind2="4">
+            <marc:subfield code="a">SF767.C29</marc:subfield>
+            <marc:subfield code="b">H83 2010</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="060" ind1="0" ind2="0">
+            <marc:subfield code="a">SF 767.C29</marc:subfield>
+            <marc:subfield code="b">H885a 2010</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="082" ind1="0" ind2="4">
+            <marc:subfield code="a">636.8/0891/00222</marc:subfield>
+            <marc:subfield code="2">20</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="049" ind1=" " ind2=" ">
+            <marc:subfield code="a">ZCUA</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="100" ind1="1" ind2=" ">
+            <marc:subfield code="a">Hudson, Lola C.,</marc:subfield>
+            <marc:subfield code="e">author.</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="245" ind1="1" ind2="0">
+            <marc:subfield code="a">Atlas of feline anatomy for veterinarians /</marc:subfield>
+            <marc:subfield code="c">Lola C. Hudson, DVM, Phd, Professor of Anatomy, North Carolina State University, College of Veterinary Medicine, Department of Molecular and Biomedical Sciences, North Carolina State University, Raleigh, North Carolina, William P. Hamilton, B.A., CMI, Fellow, Association of Medical Illustrators, Marquette, MI.</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="250" ind1=" " ind2=" ">
+            <marc:subfield code="a">Second edition.</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="260" ind1=" " ind2=" ">
+            <marc:subfield code="a">Jackson, WY. :</marc:subfield>
+            <marc:subfield code="b">Teton NewMedia,</marc:subfield>
+            <marc:subfield code="c">[2010], ©2010.</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="300" ind1=" " ind2=" ">
+            <marc:subfield code="a">264 pages :</marc:subfield>
+            <marc:subfield code="b">illustrations (some color) ;</marc:subfield>
+            <marc:subfield code="c">29 cm</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="336" ind1=" " ind2=" ">
+            <marc:subfield code="a">text</marc:subfield>
+            <marc:subfield code="b">txt</marc:subfield>
+            <marc:subfield code="2">rdacontent</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="337" ind1=" " ind2=" ">
+            <marc:subfield code="a">unmediated</marc:subfield>
+            <marc:subfield code="b">n</marc:subfield>
+            <marc:subfield code="2">rdamedia</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="338" ind1=" " ind2=" ">
+            <marc:subfield code="a">volume</marc:subfield>
+            <marc:subfield code="b">nc</marc:subfield>
+            <marc:subfield code="2">rdacarrier</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="504" ind1=" " ind2=" ">
+            <marc:subfield code="a">Includes bibliographical references and index.</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="505" ind1="0" ind2=" ">
+            <marc:subfield code="a">General information and physical examination / Lola C. Hudson -- Integumentary system / Cherie Pucheu-Haston -- Musculoskeletal system / Lola C. Hudson, William P. Hamilton -- Cardiovascular system / Jill A. Barnes -- Lymphoid system / Mary B. Tompkins, Kristina Howard -- Endocrine system / Antonella Borgatti Jeffreys, David J. Waters -- Respiratory system / Bonnie J. Smith -- Digestive system / Jill A. Barnes -- Urogenital system / Bonnie J. Smith -- Nervous system / Lola C. Hudson -- Special sensory organs / Lola C. Hudson.</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="650" ind1=" " ind2="0">
+            <marc:subfield code="a">Cats</marc:subfield>
+            <marc:subfield code="x">Anatomy</marc:subfield>
+            <marc:subfield code="v">Atlases.</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="650" ind1=" " ind2="0">
+            <marc:subfield code="a">Veterinary anatomy</marc:subfield>
+            <marc:subfield code="v">Atlases.</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="650" ind1="1" ind2="2">
+            <marc:subfield code="a">Cats</marc:subfield>
+            <marc:subfield code="x">anatomy &amp; histology.</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="650" ind1=" " ind2="7">
+            <marc:subfield code="a">Cats</marc:subfield>
+            <marc:subfield code="x">Anatomy.</marc:subfield>
+            <marc:subfield code="2">fast</marc:subfield>
+            <marc:subfield code="0">(OCoLC)fst00849376</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="650" ind1=" " ind2="7">
+            <marc:subfield code="a">Veterinary anatomy.</marc:subfield>
+            <marc:subfield code="2">fast</marc:subfield>
+            <marc:subfield code="0">(OCoLC)fst01165871</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="655" ind1=" " ind2="2">
+            <marc:subfield code="a">Atlases.</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="655" ind1=" " ind2="7">
+            <marc:subfield code="a">Atlases.</marc:subfield>
+            <marc:subfield code="2">fast</marc:subfield>
+            <marc:subfield code="0">(OCoLC)fst01423875</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="700" ind1="1" ind2=" ">
+            <marc:subfield code="a">Hamilton, William P.,</marc:subfield>
+            <marc:subfield code="e">author.</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="938" ind1=" " ind2=" ">
+            <marc:subfield code="a">YBP Library Services</marc:subfield>
+            <marc:subfield code="b">YANK</marc:subfield>
+            <marc:subfield code="n">3572411</marc:subfield>
+        </marc:datafield>
+        <marc:datafield tag="994" ind1=" " ind2=" ">
+            <marc:subfield code="a">C0</marc:subfield>
+            <marc:subfield code="b">ZCU</marc:subfield>
+        </marc:datafield>
+    </marc:record>
+</marc:collection>
