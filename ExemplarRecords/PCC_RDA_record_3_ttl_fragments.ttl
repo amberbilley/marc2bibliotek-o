@@ -1,0 +1,304 @@
+:Work1 bf:adminMetadata :AdminMetadata1 .
+
+:AdminMetadata1 a bf:AdminMetadata ;
+      bf:status
+                    [
+                      a bf:Status ;
+                      bf:code "c"
+                    ] ;
+                  bf:status :Corrected ;
+
+
+              :Work1 rdf:type bf:Text ;
+
+              :Instance1 bf:issuance http://id.lc.gov/vocabulary/issuance/mono ;
+
+
+                :AdminMetadata1 a bf:AdminMetadata ;
+                    bflc:encodingLevel
+                      [
+                        a bf:EncodingLevel ;
+                        bf:code "f"
+                      ] ;
+                <!-- NOTE use bflc??? -->
+
+
+              :AdminMetadata1 a bf:AdminMetadata ;
+                bf:descriptionConventions
+                  [
+                    a bf:DescriptionConventions ;
+                    bf:code "i"
+                  ] ;
+                bf:descriptionConventions :Isbd ;
+
+
+          :AdminMetadtat1 a bf:AdminMetadata ;
+                  bf:identifiedBy
+                    [
+                      a bf:Local ;
+                      rdf:value "ocn694080267" ;
+                      bib:hasSource :SourceInstitutionURI
+                    ] ;
+
+          :AdminMetadata1 a bf:AdminMetadata ;
+              bf:identifiedBy
+                [
+                  a bf:Local ;
+                  rdf:value "ocn694080267" ;
+                  bib:hasSource
+                      [
+                        a bf:Source
+                        bf:code "OCoLC"
+                      ] ;
+                ] ;
+
+          :AdminMetadata1 a bf:AdminMetadata ;
+              bf:changeDate "2017-07-18-02:26:33"^^edtf:edtf ;
+
+
+              :AdminMetadata1 a bf:AdminMetadata ;
+                  bf:changeDate "2010-12-22"^^edtf:edtf ;
+
+            :instance1 bib:hasActivity
+              [
+                a bib:PublisherActivity ;
+                dcterms:date “2010”^^edtf.edtf ;
+                bib:atLocation http://id.loc.gov/vocabulary/countries/wyu ;
+              [
+                a bib:PublicationActivity ;
+                dcterms:dateCopyrighted "2010"^^edtf.edtf
+              ] .
+
+
+
+              :Inst1 bf:illustrativeContent http://id.loc.gov/vocabulary/millus/ill ;
+
+
+              :Work1 bf:genreForm http://id.loc.gov/vocabulary/marcgt/bib ;
+
+
+                :Inst1 bf:supplementaryContent
+                  [
+                    a bf:SupplementaryContent ;
+                    rdfs:label "Index present"
+                  ] ;
+
+
+
+              :Work1 bf:language http://id.loc.gov/vocabulary/languages/eng ;
+
+
+          :AdminMetadata1 a bf:AdminMetadata ;
+            bib:hasSource :NRC ;
+            bf:descriptionLanguage :eng ;
+            bib:hasSource :NLM ;
+            bf:descriptionModifier :NRC, :YDXCP, :UIU, :UKMGB, :YLS, :OCLCF, :OCLCQ, :OCLCO ;
+
+
+          :Inst1 bf:identifiedBy bf:Nban
+            [
+              rdfs:value "101566522" ;
+              bib:hasSource :DNLM
+            ] ;
+
+
+        :Inst1 bf:identifiedBy bf:Nban
+          [
+            rdfs:value "015953685" ;
+            bib:hasSource :Uk
+          ] ;
+
+
+        :Inst1 bf:identifiedBy bf:Isbn
+          [
+            rdfs:value "9781591610441"
+          ] ;
+
+
+        :Inst1 bf:identifiedBy bf:Isbn
+          [
+            rdfs:value "9781591610441"
+          ] ;
+          [
+            rdfs:value "1591610443"
+          ] ;
+
+
+
+
+        :Inst1 bf:identifiedBy bf:Local
+          [
+            rdfs:value "(OCoLC)694080267"
+          ] ;
+          [
+            rdfs:value "(OCoLC)707937328" ;
+            bf:status :invalid
+          ] ;
+
+
+        :AdminMetadtat1 a bf:AdminMetadata ;
+          bf:descriptionAuthentication :nlmcopyc ;
+
+
+          :Work1 bf:classification
+            [
+              a bf:ClassificationLlc ;
+              bf:classificationPortion "SF767.C29" ;
+              bf:itemPortion "H83 2010"
+            ] ;
+
+
+          :Work1 bf:classification
+            [
+              a bf:ClassificationNlm ;
+              bf:classificationPortion "SF 767.C29" ;
+              bf:itemPortion "H885a 2010" ;
+              bib:hasSource :Nlm
+            ] ;
+
+            :Item1 bf:heldBy :Nlm .
+
+
+          :Work1 bf:classification
+            [
+              a bf:ClassificationDdc ;
+              bf:classificationPortion "636.8/0891/00222" ;
+              bib:hasSource :Dlc
+              bf:edition "20"
+            ] ;
+
+
+          :Work1 bib:hasActivity :Activity1, :Activity2 .
+
+          :Activity1 a bib:AuthorActivity ;
+            bf:agent
+              [
+                a bf:Agent ;
+                rdfs:label "Hudson, Lola C."
+              ] ;
+            vivo:rank "1" ;
+
+          :Work1 bib:hasPreferredTitle :Title1 .
+
+          :Instance bib:hasPreferredTitle :Title2 .
+
+          :Title1 a bf:Title ;
+          rdfs:label "Atlas of feline anatomy for veterinarians"
+
+
+
+          :Instance1 bf:editionStatement "Second edition" .
+
+        :instance1 bib:hasActivity
+          [
+            a bib:PublisherActivity ;
+            bib:hasAgent
+              [
+                a foaf:Agent ;
+                rdfs:label "Teton NewMedia"
+              ] ;
+            dcterms:date “[2010]” ;
+            bib:atLocation
+              [
+                a prov:Location ;
+                rdfs:label “Jackson, WY.”
+              ] .
+          ],
+          [
+            a bib:PublicationActivity ;
+            dcterms:dateCopyrighted "2010"
+          ] .
+
+
+        :Instance1
+          bf:extent
+            [
+              a bf:Extent ;
+              rdfs:label "264 pages"
+            ];
+          bf:illustrativeContent
+            [
+              a bf:Illustration ;
+              rdfs:label "illustrations (some color)"
+            ] ;
+          <!-- NOTE insert measurement pattern here for 300$c -->
+
+
+          :Work1 a bf:Work, :Text .
+
+
+          :Work1 a bf:Work, :Unmediated .
+
+
+          :Work1 a bf:Work, :Volume .
+
+
+          :Instance1 bib:isTargetOf :Note1
+
+          :Note1 a oa:Annotation ;
+            [
+              oa:hasTarget :Instance1 ;
+              oa:motivatedBy bib:specifyingContents ;
+              <!-- NOTE note sure if this is the right motivation -->
+              oa:hasBody :Body1
+            ].
+
+          :Body1 a oa:TextualBody, a bf:Note ;
+            rdf:value "Includes bibliographical references and index." .
+
+
+        :Instance1 bib:isTargetOf :Note2
+
+        :Note2 a oa:Annotation ;
+          [
+            oa:hasTarget :Instance1 ;
+            oa:motivatedBy bib:specifyingContents ;
+            oa:hasBody :Body2
+          ].
+
+        :Body2 a oa:TextualBody, a bf:Note ;
+          rdf:value "General information and physical examination / Lola C. Hudson -- Integumentary system / Cherie Pucheu-Haston -- Musculoskeletal system / Lola C. Hudson, William P. Hamilton -- Cardiovascular system / Jill A. Barnes -- Lymphoid system / Mary B. Tompkins, Kristina Howard -- Endocrine system / Antonella Borgatti Jeffreys, David J. Waters -- Respiratory system / Bonnie J. Smith -- Digestive system / Jill A. Barnes -- Urogenital system / Bonnie J. Smith -- Nervous system / Lola C. Hudson -- Special sensory organs / Lola C. Hudson." .
+
+
+        :Work1
+          bf:subject http://id.loc.gov/authorities/subjects/sh85021262 ;
+          bf:subject http://id.loc.gov/authorities/subjects/sh85143003 ;
+          bf:subject http://id.loc.gov/authorities/subjects/sh99002319 ;
+          bf:subject http://id.loc.gov/authorities/subjects/sh99001289 .
+
+
+        :Work1
+          bf:subject
+            [
+              a bf:Subject ;
+              rdfs:label "Cats" ;
+              bib:hasSource "mesh"
+
+            ] ;
+            bf:subject
+              [
+                a bf:Subject ;
+                rdfs:label "anatomy &amp; histology" ;
+                bib:hasSource "mesh"
+
+              ] ;
+
+
+        :Work1 a bf:Work ;
+          bf:subject http://id.worldcat.org/fast/849374 ;
+          bf:subject http://id.worldcat.org/fast/808440 ;
+          bf:subject http://id.worldcat.org/fast/1165871 ;
+          bf:subject http://id.worldcat.org/fast/1423875 .
+
+
+        :Work1 bib:hasActivity :Activity1, :Activity2 .
+
+        :Activity2 a bib:AuthorActivity ;
+          bf:agent
+            [
+              a bf:Agent ;
+              rdfs:label "Hamilton, William P."
+            ] ;
+          vivo:rank "2" ;
+
+      
