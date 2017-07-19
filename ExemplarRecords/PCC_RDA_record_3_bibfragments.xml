@@ -4,15 +4,26 @@
     xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
     <marc:record>
         <marc:leader>02472cam a2200505 i 4500</marc:leader>
-        <leader>         
+        <leader>
             <LDR00-04 label="Record length"></LDR00-04>
                 <!-- IGNORE -->
             <LDR05 label="Record status" oclc="Rec stat">c</LDR05>
-        
+              :Work1 bf:adminMetadata :AdminMetadata1 .
+
+              :AdminMetadata1 a bf:AdminMetadata ;
+                  bf:status
+                    [
+                      a bf:Status ;
+                      bf:code "c"
+                    ] ;
+                  bf:status :Corrected ;
+
             <LDR06 label="Type of record" oclc="Type">a</LDR06>
-            
+              :Work1 rdf:type bf:Text ;
+
             <LDR07 label="Bibliographic level" oclc="BLvl">m</LDR07>
-            
+              :Instance1 bf:issuance http://id.lc.gov/vocabulary/issuance/mono ;
+
             <LDR08 label="Type of control" oclc="Ctrl"></LDR08>
                 <!-- IGNORE (unless "a") -->
             <LDR09 label="LDRacter coding scheme"></LDR09>
@@ -25,8 +36,23 @@
                 <!-- IGNORE -->
             <LDR17 label="Encoding level" oclc="ELvl"></LDR17>
                 <!-- BLANK == FULL LEVEL -->
+                :AdminMetadata1 a bf:AdminMetadata ;
+                    bflc:encodingLevel
+                      [
+                        a bf:EncodingLevel ;
+                        bf:code "f"
+                      ] ;
+                <!-- NOTE use bflc??? -->
+
             <LDR18 label="Descriptive cataloging form" oclc="Desc">i</LDR18>
-            
+              :AdminMetadata1 a bf:AdminMetadata ;
+                bf:descriptionConventions
+                  [
+                    a bf:DescriptionConventions ;
+                    bf:code "i"
+                  ] ;
+                bf:descriptionConventions :Isbd ;
+
             <LDR19 label="Multipart resource record level"></LDR19>
                 <!-- IGNORE -->
               <LDR20 label="Length of the length-of-field portion"></LDR20>
@@ -38,27 +64,88 @@
             <LDR23 label="Undefined"></LDR23>
                 <!-- IGNORE -->
         </leader>
-        
-        <marc:controlfield tag="001">ocn694080267</marc:controlfield>  
-            <!-- 
-                :Work1 a bf:Work ;
-                bf:adminMetadata 
-                    [ 
-                        a bf:AdminMetadata ;
-                        bf:identifiedBy 
-                            [ 
-                                a bf:Local ;
-                                rdf:value "ocn694080267" ;
-                                bib:source http://id.loc.gov/vocabulary/organizations/[URI]  
-                            ] 
-                    ] .
-            
-            
-            -->
-        
+
+        <marc:controlfield tag="001">ocn694080267</marc:controlfield>
+          :AdminMetadtat1 a bf:AdminMetadata ;
+                  bf:identifiedBy
+                    [
+                      a bf:Local ;
+                      rdf:value "ocn694080267" ;
+                      bib:hasSource :SourceInstitutionURI
+                    ] ;
+
         <marc:controlfield tag="003">OCoLC</marc:controlfield>
+          :AdminMetadata1 a bf:AdminMetadata ;
+              bf:identifiedBy
+                [
+                  a bf:Local ;
+                  rdf:value "ocn694080267" ;
+                  bib:hasSource
+                      [
+                        a bf:Source
+                        bf:code "OCoLC"
+                      ] ;
+                ] ;
+
         <marc:controlfield tag="005">20170718022633.0</marc:controlfield>
+          :AdminMetadata1 a bf:AdminMetadata ;
+              bf:changeDate "2017-07-18-02:26:33"^^xs:dateTime ;
+
         <marc:controlfield tag="008">101222t20102010wyua     b    001 0 eng d</marc:controlfield>
+
+          <008_00-05 label="Date entered on file" oclc="Entered">101222</008_00-04>
+              :AdminMetadata1 a bf:AdminMetadata ;
+                  bf:changeDate "2010-12-22"^^xs:date ;
+
+          <008_06 label="Type of date/Publication status" oclc=-"DtSt">t</008_06>
+            <!-- Use to dermine how to format 008_07-10 and 008_11-14. See LC mtbf -->
+
+          <008_07-10 label="Date 1" oclc="Dates (Date 1)">2010</008_07-10>
+            <!-- Publication Activity Pattern -->
+
+          <008_11-14 label="Date 2" oclc="Dates (Date 2)">2010</008_11-14>
+            <!-- Copyright Activity Pattern -->
+
+          <008_15-17 label="Place of publication, production, or execution" oclc="Ctry">wyu</008_15-17>
+            <!-- Publication Activity Pattern -->
+
+        <!-- NOTE: 18-34 - [See one of the seven separate 008_18-34 configuration sections for these elements.] -->
+
+          <BOOKS>
+            <008_18-21 label="Illustrations" oclc="Ills">a</008_18-21>
+              :Inst1 bf:illustrativeContent http://id.loc.gov/vocabulary/millus/ill ;
+
+            <008_22 label="Target audience" oclc="Audn"></008_22>
+            <008_23 label="Form of item"></008_23>
+            <008_24-27 label="Nature of contents" oclc="Cont">b</008_24-27>
+              :Work1 bf:genreForm http://id.loc.gov/vocabulary/marcgt/bib ;
+
+            <008_28 label="Government publication" oclc="GPub"></008_28>
+            <008_29 label="Conference publication" oclc="Conf">0</008_29>
+              <!-- IGNORE if 0 -->
+            <008_30 label="Festschrift" oclc="Fest">0</008_30>
+              <!-- IGNORE if 0 -->
+            <008_31 label="Index" oclc="Indx">1</008_31>
+                :Inst1 bf:supplementaryContent
+                  [
+                    a bf:SupplementaryContent ;
+                    rdfs:label "Index present"
+                  ] ;
+
+            <008_32 label="Undefined"></008_32>
+            <008_33 label="Literary form" oclc="LitF">0</008_33>
+              <!-- IGNORE if 0 -->
+            <008_34 label="Biography" oclc="Biog"></008_34>
+          </BOOKS>
+
+          <008_35-37 label="Language" oclc="Lang">eng</008_35-37>
+              :Work1 bf:language http://id.loc.gov/vocabulary/languages/eng ;
+
+          <008_38 label="Modified record" oclc="MRec"></008_38>
+            <!-- IGNORE -->
+          <008_39 label="Cataloging source" oclc="Srce">c</008_39>
+            <!-- IGNORE -->
+
         <marc:datafield tag="040" ind1=" " ind2=" ">
             <marc:subfield code="a">NRC</marc:subfield>
             <marc:subfield code="b">eng</marc:subfield>
@@ -73,23 +160,56 @@
             <marc:subfield code="d">OCLCQ</marc:subfield>
             <marc:subfield code="d">OCLCO</marc:subfield>
         </marc:datafield>
+          :AdminMetadata1 a bf:AdminMetadata ;
+            bib:hasSource :NRC ;
+            bf:descriptionLanguage :eng ;
+            bib:hasSource :NLM ;
+            bf:descriptionModifier :NRC, :YDXCP, :UIU, :UKMGB, :YLS, :OCLCF, :OCLCQ, :OCLCO ;
+
         <marc:datafield tag="016" ind1="7" ind2=" ">
             <marc:subfield code="a">101566522</marc:subfield>
             <marc:subfield code="2">DNLM</marc:subfield>
         </marc:datafield>
+          :Inst1 bf:identifiedBy bf:Nban
+            [
+              rdfs:value "101566522" ;
+              bib:hasSource :DNLM
+            ] ;
+
         <marc:datafield tag="016" ind1="7" ind2=" ">
             <marc:subfield code="a">015953685</marc:subfield>
             <marc:subfield code="2">Uk</marc:subfield>
         </marc:datafield>
+        :Inst1 bf:identifiedBy bf:Nban
+          [
+            rdfs:value "015953685" ;
+            bib:hasSource :Uk
+          ] ;
+
         <marc:datafield tag="019" ind1=" " ind2=" ">
             <marc:subfield code="a">707937328</marc:subfield>
         </marc:datafield>
+        <!-- NOTE no mapping found for 019 -->
+
         <marc:datafield tag="020" ind1=" " ind2=" ">
             <marc:subfield code="a">9781591610441</marc:subfield>
         </marc:datafield>
+        :Inst1 bf:identifiedBy bf:Isbn
+          [
+            rdfs:value "9781591610441"
+          ] ;
+
         <marc:datafield tag="020" ind1=" " ind2=" ">
             <marc:subfield code="a">1591610443</marc:subfield>
         </marc:datafield>
+        :Inst1 bf:identifiedBy bf:Isbn
+          [
+            rdfs:value "9781591610441"
+          ] ;
+          [
+            rdfs:value "1591610443"
+          ] ;
+
         <marc:datafield tag="029" ind1="0" ind2=" ">
             <marc:subfield code="a">NLM</marc:subfield>
             <marc:subfield code="b">101566522</marc:subfield>
@@ -106,36 +226,89 @@
             <marc:subfield code="a">CHVBK</marc:subfield>
             <marc:subfield code="b">197165397</marc:subfield>
         </marc:datafield>
+        <!-- NOTE no mapping found for 029 -->
+
         <marc:datafield tag="035" ind1=" " ind2=" ">
             <marc:subfield code="a">(OCoLC)694080267</marc:subfield>
             <marc:subfield code="z">(OCoLC)707937328</marc:subfield>
         </marc:datafield>
+        :Inst1 bf:identifiedBy bf:Local
+          [
+            rdfs:value "(OCoLC)694080267"
+          ] ;
+          [
+            rdfs:value "(OCoLC)707937328" ;
+            bf:status :invalid
+          ] ;
+
         <marc:datafield tag="042" ind1=" " ind2=" ">
             <marc:subfield code="a">nlmcopyc</marc:subfield>
         </marc:datafield>
+        :AdminMetadtat1 a bf:AdminMetadata ;
+          bf:descriptionAuthentication :nlmcopyc ;
+
         <marc:datafield tag="050" ind1=" " ind2="4">
             <marc:subfield code="a">SF767.C29</marc:subfield>
             <marc:subfield code="b">H83 2010</marc:subfield>
         </marc:datafield>
+          :Work1 bf:classification
+            [
+              a bf:ClassificationLlc ;
+              bf:classificationPortion "SF767.C29" ;
+              bf:itemPortion "H83 2010"
+            ] ;
+
         <marc:datafield tag="060" ind1="0" ind2="0">
             <marc:subfield code="a">SF 767.C29</marc:subfield>
             <marc:subfield code="b">H885a 2010</marc:subfield>
         </marc:datafield>
+          :Work1 bf:classification
+            [
+              a bf:ClassificationNlm ;
+              bf:classificationPortion "SF 767.C29" ;
+              bf:itemPortion "H885a 2010" ;
+              bib:hasSource :Nlm
+            ] ;
+
+            :Item1 bf:heldBy :Nlm .
+
         <marc:datafield tag="082" ind1="0" ind2="4">
             <marc:subfield code="a">636.8/0891/00222</marc:subfield>
             <marc:subfield code="2">20</marc:subfield>
         </marc:datafield>
+          :Work1 bf:classification
+            [
+              a bf:ClassificationDdc ;
+              bf:classificationPortion "636.8/0891/00222" ;
+              bib:hasSource :Dlc
+              bf:edition "20"
+            ] ;
+
         <marc:datafield tag="049" ind1=" " ind2=" ">
             <marc:subfield code="a">ZCUA</marc:subfield>
         </marc:datafield>
+        <!-- NOTE no mapping found for 049 -->
+
         <marc:datafield tag="100" ind1="1" ind2=" ">
             <marc:subfield code="a">Hudson, Lola C.,</marc:subfield>
             <marc:subfield code="e">author.</marc:subfield>
         </marc:datafield>
+          :Work1 bib:hasActivity :Activity1 .
+
+          :Activity1 a bib:AuthorActivity ;
+            bf:agent
+              [
+                a bf:Agent ;
+                rdfs:label "Hudson, Lola C."
+              ] ;
+          <!-- NOTE if the $e is present the ending comma in $a will need to be removed -->
+
         <marc:datafield tag="245" ind1="1" ind2="0">
             <marc:subfield code="a">Atlas of feline anatomy for veterinarians /</marc:subfield>
             <marc:subfield code="c">Lola C. Hudson, DVM, Phd, Professor of Anatomy, North Carolina State University, College of Veterinary Medicine, Department of Molecular and Biomedical Sciences, North Carolina State University, Raleigh, North Carolina, William P. Hamilton, B.A., CMI, Fellow, Association of Medical Illustrators, Marquette, MI.</marc:subfield>
         </marc:datafield>
+
+        
         <marc:datafield tag="250" ind1=" " ind2=" ">
             <marc:subfield code="a">Second edition.</marc:subfield>
         </marc:datafield>
