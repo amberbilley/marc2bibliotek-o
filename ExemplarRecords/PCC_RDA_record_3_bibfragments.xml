@@ -22,7 +22,7 @@
               :Work1 rdf:type bf:Text ;
 
             <LDR07 label="Bibliographic level" oclc="BLvl">m</LDR07>
-              :Instance1 bf:issuance http://id.lc.gov/vocabulary/issuance/mono ;
+              :Instance1 bf:issuance <http://id.lc.gov/vocabulary/issuance/mono> ;
 
             <LDR08 label="Type of control" oclc="Ctrl"></LDR08>
                 <!-- IGNORE (unless "a") -->
@@ -89,7 +89,7 @@
 
         <marc:controlfield tag="005">20170718022633.0</marc:controlfield>
           :AdminMetadata1 a bf:AdminMetadata ;
-              bf:changeDate "2017-07-18-02:26:33"^^edtf:edtf ;
+              bf:changeDate "2017-07-18T02:26:33"^^edtf:edtf ;
 
         <marc:controlfield tag="008">101222t20102010wyua     b    001 0 eng d</marc:controlfield>
           <008_00-05 label="Date entered on file" oclc="Entered">101222</008_00-04>
@@ -108,7 +108,7 @@
               [
                 a bib:PublisherActivity ;
                 dcterms:date “2010”^^edtf.edtf ;
-                bib:atLocation http://id.loc.gov/vocabulary/countries/wyu ;
+                bib:atLocation <http://id.loc.gov/vocabulary/countries/wyu> ;
               [
                 a bib:PublicationActivity ;
                 dcterms:dateCopyrighted "2010"^^edtf.edtf
@@ -118,12 +118,12 @@
 
           <008_BOOKS>
             <008_18-21 label="Illustrations" oclc="Ills">a</008_18-21>
-              :Inst1 bf:illustrativeContent http://id.loc.gov/vocabulary/millus/ill ;
+              :Inst1 bf:illustrativeContent <http://id.loc.gov/vocabulary/millus/ill> ;
 
             <008_22 label="Target audience" oclc="Audn"></008_22>
             <008_23 label="Form of item"></008_23>
             <008_24-27 label="Nature of contents" oclc="Cont">b</008_24-27>
-              :Work1 bf:genreForm http://id.loc.gov/vocabulary/marcgt/bib ;
+              :Work1 bf:genreForm <http://id.loc.gov/vocabulary/marcgt/bib> ;
 
             <008_28 label="Government publication" oclc="GPub"></008_28>
             <008_29 label="Conference publication" oclc="Conf">0</008_29>
@@ -144,7 +144,7 @@
           </008_BOOKS>
 
           <008_35-37 label="Language" oclc="Lang">eng</008_35-37>
-              :Work1 bf:language http://id.loc.gov/vocabulary/languages/eng ;
+              :Work1 bf:language <http://id.loc.gov/vocabulary/languages/eng> ;
 
           <008_38 label="Modified record" oclc="MRec"></008_38>
             <!-- IGNORE -->
@@ -210,7 +210,7 @@
         :Inst1 bf:identifiedBy bf:Isbn
           [
             rdfs:value "9781591610441"
-          ] ;
+          ] ,
           [
             rdfs:value "1591610443"
           ] ;
@@ -240,7 +240,7 @@
         :Inst1 bf:identifiedBy bf:Local
           [
             rdfs:value "(OCoLC)694080267"
-          ] ;
+          ] ,
           [
             rdfs:value "(OCoLC)707937328" ;
             bf:status :invalid
@@ -319,9 +319,8 @@
           :Instance bib:hasPreferredTitle :Title2 .
 
           :Title1 a bf:Title ;
-          rdfs:label "Atlas of feline anatomy for veterinarians"
+          rdfs:label "Atlas of feline anatomy for veterinarians" .
           <!-- NOTE remove forward slash between the title statement and the statement of responsibility -->
-
 
         <marc:datafield tag="250" ind1=" " ind2=" ">
             <marc:subfield code="a">Second edition.</marc:subfield>
@@ -369,7 +368,17 @@
               a bf:Illustration ;
               rdfs:label "illustrations (some color)"
             ] ;
-          <!-- NOTE insert measurement pattern here for 300$c -->
+          ex:hasMeasurementGroup
+            [
+              a ex:MeasurementGroup ;
+              ex:hasMeasurement
+                [
+                  rdfs:label "29 cm" ;
+                  bib:measures <http://vocab.getty.edu/aat/300055644> ;
+                  rdf:value "29" ;
+                  bib:hasUnit <http://data.nasa.gov/qudt/owl/unit#Centimeter>
+                ] ;
+            ] ;
 
         <marc:datafield tag="336" ind1=" " ind2=" ">
             <marc:subfield code="a">text</marc:subfield>
@@ -403,7 +412,7 @@
               oa:motivatedBy bib:specifyingContents ;
               <!-- NOTE note sure if this is the right motivation -->
               oa:hasBody :Body1
-            ].
+            ] .
 
           :Body1 a oa:TextualBody, a bf:Note ;
             rdf:value "Includes bibliographical references and index." .
@@ -419,7 +428,7 @@
             oa:hasTarget :Instance1 ;
             oa:motivatedBy bib:specifyingContents ;
             oa:hasBody :Body2
-          ].
+          ] .
 
         :Body2 a oa:TextualBody, a bf:Note ;
           rdf:value "General information and physical examination / Lola C. Hudson -- Integumentary system / Cherie Pucheu-Haston -- Musculoskeletal system / Lola C. Hudson, William P. Hamilton -- Cardiovascular system / Jill A. Barnes -- Lymphoid system / Mary B. Tompkins, Kristina Howard -- Endocrine system / Antonella Borgatti Jeffreys, David J. Waters -- Respiratory system / Bonnie J. Smith -- Digestive system / Jill A. Barnes -- Urogenital system / Bonnie J. Smith -- Nervous system / Lola C. Hudson -- Special sensory organs / Lola C. Hudson." .
@@ -434,10 +443,10 @@
             <marc:subfield code="v">Atlases.</marc:subfield>
         </marc:datafield>
         :Work1
-          bf:subject http://id.loc.gov/authorities/subjects/sh85021262 ;
-          bf:subject http://id.loc.gov/authorities/subjects/sh85143003 ;
-          bf:subject http://id.loc.gov/authorities/subjects/sh99002319 ;
-          bf:subject http://id.loc.gov/authorities/subjects/sh99001289 .
+          bf:subject <http://id.loc.gov/authorities/subjects/sh85021262> ;
+          bf:subject <http://id.loc.gov/authorities/subjects/sh85143003> ;
+          bf:subject <http://id.loc.gov/authorities/subjects/sh99002319> ;
+          bf:subject <http://id.loc.gov/authorities/subjects/sh99001289> .
 
         <marc:datafield tag="650" ind1="1" ind2="2">
             <marc:subfield code="a">Cats</marc:subfield>
@@ -479,10 +488,10 @@
             <marc:subfield code="0">(OCoLC)fst01423875</marc:subfield>
         </marc:datafield>
         :Work1 a bf:Work ;
-          bf:subject http://id.worldcat.org/fast/849374 ;
-          bf:subject http://id.worldcat.org/fast/808440 ;
-          bf:subject http://id.worldcat.org/fast/1165871 ;
-          bf:subject http://id.worldcat.org/fast/1423875 .
+          bf:subject <http://id.worldcat.org/fast/849374> ;
+          bf:subject <http://id.worldcat.org/fast/808440> ;
+          bf:subject <http://id.worldcat.org/fast/1165871> ;
+          bf:subject <http://id.worldcat.org/fast/1423875> .
 
         <marc:datafield tag="700" ind1="1" ind2=" ">
             <marc:subfield code="a">Hamilton, William P.,</marc:subfield>
