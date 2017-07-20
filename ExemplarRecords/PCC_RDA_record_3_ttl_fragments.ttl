@@ -242,6 +242,15 @@
   bf:descriptionLanguage <http://id.loc.gov/vocabulary/languages/eng> ;
   bib:hasSource :NLM ;
   bf:descriptionModifier :NRC, :YDXCP, :UIU, :UKMGB, :YLS, :OCLCF, :OCLCQ, :OCLCO ;
-  bf:descriptionAuthentication :nlmcopyc .
+  bf:descriptionConventions
+    [
+      a bf:DescriptionConventions ;
+      rdfs:label "rda"
+    ] ;
+  bf:descriptionAuthentication
+    [
+      a bf:DescriptionAuthenticattion ;
+      rdfs:label "pcc"
+    ] .
 
 # END

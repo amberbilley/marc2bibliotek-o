@@ -170,6 +170,11 @@
             bf:descriptionLanguage :eng ;
             bib:hasSource :NLM ;
             bf:descriptionModifier :NRC, :YDXCP, :UIU, :UKMGB, :YLS, :OCLCF, :OCLCQ, :OCLCO ;
+            bf:descriptionConventions
+              [
+                a bf:DescriptionConventions ;
+                rdfs:label "rda"
+              ] ;
 
         <marc:datafield tag="016" ind1="7" ind2=" ">
             <marc:subfield code="a">101566522</marc:subfield>
@@ -247,10 +252,14 @@
           ] ;
 
         <marc:datafield tag="042" ind1=" " ind2=" ">
-            <marc:subfield code="a">nlmcopyc</marc:subfield>
+            <marc:subfield code="a">pcc</marc:subfield>
         </marc:datafield>
         :AdminMetadtat1 a bf:AdminMetadata ;
-          bf:descriptionAuthentication :nlmcopyc ;
+          bf:descriptionAuthentication
+            [
+              a bf:DescriptionAuthentication ;
+              rdfs:label "pcc"
+            ] ;
 
         <marc:datafield tag="050" ind1=" " ind2="4">
             <marc:subfield code="a">SF767.C29</marc:subfield>
