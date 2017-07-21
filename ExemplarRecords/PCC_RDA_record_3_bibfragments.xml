@@ -166,10 +166,46 @@
             <marc:subfield code="d">OCLCO</marc:subfield>
         </marc:datafield>
           :AdminMetadata1 a bf:AdminMetadata ;
-            bib:hasSource :NRC ;
-            bf:descriptionLanguage :eng ;
-            bib:hasSource :NLM ;
-            bf:descriptionModifier :NRC, :YDXCP, :UIU, :UKMGB, :YLS, :OCLCF, :OCLCQ, :OCLCO ;
+            bib:hasSource
+              [
+                a bf:Agent ;
+                rdfs:label "NRC"
+              ];
+            bf:descriptionLanguage <http://id.loc.gov/vocabulary/languages/eng> ;
+            bib:hasSource
+              [
+                a bf:Agent ;
+                rdfs:label "NLM"
+              ] ;
+            bf:descriptionModifier
+              [
+                a bf:Agent ;
+                rdfs:label "NRC"
+              ] ,
+              [
+                a bf:Agent ;
+                rdfs:label "YDXCP"
+              ] ,
+              [
+                a bf:Agent ;
+                rdfs:label "UKMGB"
+              ] ,
+              [
+                a bf:Agent ;
+                rdfs:label "YLS"
+              ] ,
+              [
+                a bf:Agent ;
+                rdfs:label "OCLCF"
+              ] ,
+              [
+                a bf:Agent ;
+                rdfs:label "OCLCQ"
+              ] ,
+              [
+                a bf:Agent ;
+                rdfs:label "OCLCO"
+              ] ;
             bf:descriptionConventions
               [
                 a bf:DescriptionConventions ;
@@ -394,21 +430,21 @@
             <marc:subfield code="b">txt</marc:subfield>
             <marc:subfield code="2">rdacontent</marc:subfield>
         </marc:datafield>
-          :Work1 a bf:Work, :Text .
+          :Work1 a bf:Work, bf:Text, .
 
         <marc:datafield tag="337" ind1=" " ind2=" ">
             <marc:subfield code="a">unmediated</marc:subfield>
             <marc:subfield code="b">n</marc:subfield>
             <marc:subfield code="2">rdamedia</marc:subfield>
         </marc:datafield>
-          :Work1 a bf:Work, :Unmediated .
+          <!-- DO NOT MAP UNMEDIATED SEE Content, Carrier, and Media Type Recommendation Doc -->
 
         <marc:datafield tag="338" ind1=" " ind2=" ">
             <marc:subfield code="a">volume</marc:subfield>
             <marc:subfield code="b">nc</marc:subfield>
             <marc:subfield code="2">rdacarrier</marc:subfield>
         </marc:datafield>
-          :Work1 a bf:Work, :Volume .
+          :Work1 a bf:Work, bib:Volume .
 
         <marc:datafield tag="504" ind1=" " ind2=" ">
             <marc:subfield code="a">Includes bibliographical references and index.</marc:subfield>
@@ -418,7 +454,7 @@
           :Note1 a oa:Annotation ;
             [
               oa:hasTarget :Instance1 ;
-              oa:motivatedBy bib:specifyingContents ;
+              oa:motivatedBy oa:describing ;
               <!-- NOTE note sure if this is the right motivation -->
               oa:hasBody :Body1
             ] .

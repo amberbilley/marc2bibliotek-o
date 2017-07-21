@@ -13,11 +13,7 @@
 
 #### WORK METADATA ####
 
-:Work1 a bf:Work, bf:Text,
-  #rdaco:1020 == text
-  <http://rdaregistry.info/termList/RDAContentType/1020> ,
-  #rdamt:1007 == unmediated
-  <http://rdaregistry.info/termList/RDAMediaType/1007> ;
+:Work1 a bf:Work, bf:Text ;
   bf:adminMetadata :AdminMetadata1 ;
   bib:hasPreferredTitle :Title1 ;
   bib:hasActivity :Activity1, :Activity2 ;
@@ -85,9 +81,7 @@
 
 #### INSTANCE METADATA ####
 
-:Instance a bf:Instance,
-  #rdact:1049 == volume
-  <http://rdaregistry.info/termList/RDACarrierType/1049> ;
+:Instance a bf:Instance, bib:Volume .
   bf:issuance http://id.lc.gov/vocabulary/issuance/mono ;
   bib:hasActivity
     [
@@ -177,7 +171,7 @@
     :Note1 a oa:Annotation ;
       [
         oa:hasTarget :Instance1 ;
-        oa:motivatedBy bib:specifyingContents ;
+        oa:motivatedBy oa:describing ;
         <!-- NOTE note sure if this is the right motivation -->
         oa:hasBody :Body1
       ] .
@@ -238,10 +232,45 @@
     ] ;
   bf:changeDate "2017-07-18T02:26:33"^^edtf:edtf ;
   bf:changeDate "2010-12-22"^^edtf:edtf ;
-  bib:hasSource :NRC ;
+  bib:hasSource
+    [
+      a bf:Agent ;
+      rdfs:label "NRC"
+    ],
+    [
+      a bf:Agent ;
+      rdfs:label "NLM"
+    ] ;
+  bf:descriptionModifier
+    [
+      a bf:Agent ;
+      rdfs:label "NRC"
+    ] ,
+    [
+      a bf:Agent ;
+      rdfs:label "YDXCP"
+    ] ,
+    [
+      a bf:Agent ;
+      rdfs:label "UKMGB"
+    ] ,
+    [
+      a bf:Agent ;
+      rdfs:label "YLS"
+    ] ,
+    [
+      a bf:Agent ;
+      rdfs:label "OCLCF"
+    ] ,
+    [
+      a bf:Agent ;
+      rdfs:label "OCLCQ"
+    ] ,
+    [
+      a bf:Agent ;
+      rdfs:label "OCLCO"
+    ] ;
   bf:descriptionLanguage <http://id.loc.gov/vocabulary/languages/eng> ;
-  bib:hasSource :NLM ;
-  bf:descriptionModifier :NRC, :YDXCP, :UIU, :UKMGB, :YLS, :OCLCF, :OCLCQ, :OCLCO ;
   bf:descriptionConventions
     [
       a bf:DescriptionConventions ;
